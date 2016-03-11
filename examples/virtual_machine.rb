@@ -3,11 +3,11 @@ require_relative '../lib/azure-armrest'
 require 'pp'
 
 conf = Azure::Armrest::ArmrestService.configure(
-  :client_id       => 'client_id',
-  :client_key      => 'client_key',
-  :tenant_id       => 'tenant_id',
-  :subscription_id => 'subscription_id',
-  :resource_group  => 'resource_group'
+  :client_id       => ENV['AZURECLIENTID'],
+  :client_key      => ENV['AZURECLIENTKEY'],
+  :tenant_id       => ENV['AZURETENANTID'],
+  :subscription_id => ENV['AZURESUBSCRIPTIONID'],
+  :resource_group  => ENV['AZURERESOURCEGROUP']
 )
 
 vms = Azure::Armrest::VirtualMachineService.new(conf)
