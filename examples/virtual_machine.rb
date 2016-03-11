@@ -11,15 +11,15 @@ conf = Azure::Armrest::ArmrestService.configure(
 )
 
 vms = Azure::Armrest::VirtualMachineService.new(conf)
-vm_model = vms.get('my_machine_name', conf.resource_group, true)
+vm_model = vms.get('alavmdisks', conf.resource_group, true)
 
-pp vm_model
-pp vm_model.properties
-pp vm_model.os_disk
+# pp vm_model
+# pp vm_model.properties
+# pp vm_model.os_disk
 pp vm_model.data_disks
-pp vm_model.networks
+# pp vm_model.networks
 
 # actions
-vm_model.start
-vm_model.stop
-vm_model.deallocate
+# vm_model.start
+# vm_model.stop
+# vm_model.deallocate
